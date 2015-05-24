@@ -25,7 +25,7 @@ Our goal is to merge the training and test data and focus on the mean and standa
 
 Towards this following steps were performed. 
 
-### OBJECTIVE 1 - Merges the training and the test sets to create one data set.
+#### OBJECTIVE 1 - Merges the training and the test sets to create one data set.
 #STEPS
 	#1 Read test data
 			#A) Read features.txt (This forms the columns of the data frame)
@@ -42,18 +42,18 @@ Towards this following steps were performed.
 	#3 Rbind testdf, traindf
 
 
-### OBJECTIVE 2 - Extract only the measurements on the mean and standard deviation for each measurement.
+#### OBJECTIVE 2 - Extract only the measurements on the mean and standard deviation for each measurement.
 
 This has been done by using a simple search of all the features for the words mean or std. All features that found a match were included in the study. It may be noted that all features that have the words "mean" or "std" may not be of interest. Optimizing the regular expression used in the grep will help provide cleaner data, if needed. As is, 79 features have been included. 
 
-### OBJECTIVE 3 - Uses descriptive activity names to name the activities in the data set
+#### OBJECTIVE 3 - Uses descriptive activity names to name the activities in the data set
 
 The activity_labels.txt file contains activity names and their corresponding "levels". This information was used to define an "activity" column with human readable labels using factor()
 
-### OBJECTIVE 4 - Appropriately labels the data set with descriptive variable names.
+#### OBJECTIVE 4 - Appropriately labels the data set with descriptive variable names.
 This objective has been covered in steps 1.1D and 1.2C by specifying col.names from features.
 
-### OBJECTIVE 5 - From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+#### OBJECTIVE 5 - From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 The melt and dcast functions from the reshape2 package have been employed to meet this objective. 
 The melt function is used to transform the wide data to long data by "swinging down" the columns to variable-value pairs with "subject" and "activity" as id fields.
